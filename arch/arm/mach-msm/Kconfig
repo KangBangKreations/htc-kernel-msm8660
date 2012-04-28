@@ -606,9 +606,16 @@ config MACH_SHOOTER_U
 	help
 	  Support for the HTC Evo 3D GSM board.
 
+config MACH_HOLIDAY
+	depends on ARCH_MSM8X60 && MACH_HTC8X60
+	default n
+	bool "Holiday"
+	help
+	  Support for the Holiday device.
+
 config HTC_DEVICE
-	default y if MACH_SHOOTER || MACH_SHOOTER_U
-	bool "Set various HTC options"
+	default y if MACH_SHOOTER || MACH_SHOOTER_U || MACH_PYRAMID || MACH_HOLIDAY
+	bool
 
 config HTC_MMC
 	depends on HTC_DEVICE
